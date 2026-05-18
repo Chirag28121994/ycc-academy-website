@@ -20,10 +20,15 @@ jobs:
       - name: Checkout your repository
         uses: actions/checkout@v4
 
+      # ADD THIS EXPLICIT STEP TO UPGRADE THE NODE ENVIRONMENT ENGINE:
+      - name: Install and Setup Modern Node.js v22
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
       - name: Install, bundle, and build static assets
         uses: withastro/action@v3
         with:
-          # THIS IS THE CRITICAL ADDITION: Tells GitHub exactly where the app lives
           path: ./nuclear-nova
 
   deploy:
