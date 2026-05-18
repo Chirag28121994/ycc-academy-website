@@ -1,11 +1,12 @@
 ---
 // Shared Footer Component with Contact Information
+import { SITE, CONTACT } from '../config';
 ---
 <footer class="bg-slate-900 text-slate-400 py-12 px-4 border-t border-slate-800">
   <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
     <div>
-      <h4 class="text-white font-bold text-lg mb-4">YCC Academy</h4>
-      <p class="text-sm leading-relaxed">Yogya Career Classes is committed to providing high-quality, concept-driven schooling support and career guidance across Gwalior.</p>
+      <h4 class="text-white font-bold text-lg mb-4">{SITE.name}</h4>
+      <p class="text-sm leading-relaxed">{SITE.fullName} is committed to providing high-quality, concept-driven schooling support and career guidance across Gwalior.</p>
     </div>
 
     <div>
@@ -22,21 +23,21 @@
       <ul class="space-y-3 text-sm">
         <li class="flex items-start gap-2">
           <span class="text-amber-400 font-bold">📍</span>
-          <span>Sabzi Mandi ke samne, Karnal ki Bagiya, Pinto Park, Gwalior (M.P.)</span>
+          <span>{SITE.address}</span>
         </li>
         <li class="flex items-center gap-2">
           <span class="text-amber-400 font-bold">📞</span>
-          <a href="tel:+918109257998" class="hover:text-white transition-colors">Atul Sir: +91 81092 57998</a>
+          <a href={`tel:${CONTACT.primary.phone.replace(/ /g, '')}`} class="hover:text-white transition-colors">{CONTACT.primary.name}: {CONTACT.primary.phone}</a>
         </li>
         <li class="flex items-center gap-2">
           <span class="text-amber-400 font-bold">📞</span>
-          <a href="tel:+918224097734" class="hover:text-white transition-colors">Vikash Sir: +91 82240 97734</a>
+          <a href={`tel:${CONTACT.secondary.phone.replace(/ /g, '')}`} class="hover:text-white transition-colors">{CONTACT.secondary.name}: {CONTACT.secondary.phone}</a>
         </li>
       </ul>
     </div>
   </div>
 
   <div class="max-w-6xl mx-auto border-t border-slate-800 mt-8 pt-6 text-center text-xs tracking-wide">
-    &copy; {new Date().getFullYear()} YCC Academy Gwalior. Built with Static SSG Architecture.
+    &copy; {SITE.year} {SITE.name} Gwalior. Built with Static SSG Architecture.
   </div>
 </footer>

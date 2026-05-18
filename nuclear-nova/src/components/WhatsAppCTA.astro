@@ -1,7 +1,8 @@
 ---
 // WhatsApp Floating Button Component
-const whatsappNumber = "918109257998"; // Atul Sir's number in international format
-const prefilledText = encodeURIComponent("Hello YCC Academy, I would like to inquire about enrolling my child for demo classes.");
+import { CONTACT } from '../config';
+const whatsappNumber = CONTACT.primary.whatsappCode;
+const prefilledText = encodeURIComponent(CONTACT.whatsappPrefill);
 ---
 <a
   href={`https://wa.me/${whatsappNumber}?text=${prefilledText}`}
