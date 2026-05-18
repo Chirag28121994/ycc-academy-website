@@ -1,0 +1,46 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const streams = [
+  { name: "PCM + B", subjects: ["Maths", "Physics", "Chemistry", "Biology"] },
+  { name: "Commerce", subjects: ["Account", "Business", "Economy"] },
+  { name: "Arts / Humanities", subjects: ["History", "Polity", "Geography", "Economy"] },
+  { name: "Languages", subjects: ["English", "Hindi"] }
+];
+---
+
+<BaseLayout title="Senior Wing (11th & 12th) Stream Choices & Fees">
+  <section class="bg-gradient-to-r from-indigo-900 to-slate-900 text-white py-12 px-4 text-center">
+    <h1 class="text-3xl md:text-4xl font-bold">Senior Wing (11th + 12th)</h1>
+    <p class="text-slate-300 mt-2">Targeted stream specialization focusing on conceptual clarity and board scores</p>
+  </section>
+
+  <section class="max-w-5xl mx-auto py-16 px-4">
+    <div class="bg-gradient-to-br from-amber-50 to-amber-100 border border-amber-200 rounded-xl p-6 text-center mb-12 shadow-sm">
+      <h2 class="text-xl font-bold text-amber-900">Per-Subject Stream Fee Layout</h2>
+      <div class="mt-4 flex flex-wrap justify-center gap-6 text-lg font-semibold">
+        <span class="text-slate-800">MP Board: <span class="text-emerald-700">₹12,000/- per subject</span></span>
+        <span class="text-slate-800">CBSE Board: <span class="text-blue-700">₹15,000/- per subject</span></span>
+      </div>
+      <p class="text-slate-600 text-xs mt-3">Registration Fees: ₹500/- applies to new student intakes.</p>
+    </div>
+
+    <h3 class="text-2xl font-bold text-slate-800 mb-8 text-center">Available Specialization Streams</h3>
+    <div class="grid sm:grid-cols-2 gap-8">
+      {streams.map((stream) => (
+        <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6 hover:shadow-md transition-shadow">
+          <h4 class="text-lg font-bold text-indigo-950 border-b border-slate-100 pb-3 mb-4 flex items-center gap-2">
+            🚀 {stream.name}
+          </h4>
+          <ul class="space-y-2">
+            {stream.subjects.map((sub) => (
+              <li class="flex items-center gap-2 text-slate-600 text-sm">
+                <span class="text-emerald-500 font-bold">•</span> {sub}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

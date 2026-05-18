@@ -1,0 +1,58 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const classesData = [
+  { grade: "5th + 6th", mpFee: "15,000/-", cbseFee: "18,000/-" },
+  { grade: "7th + 8th", mpFee: "18,000/-", cbseFee: "24,000/-" },
+  { grade: "9th + 10th", mpFee: "25,000/-", cbseFee: "36,000/-" }
+];
+
+const subjects = ["Maths", "Science", "Social Science", "English", "Hindi", "Sanskrit"];
+---
+
+<BaseLayout title="Junior Wing (Classes 5th - 10th) Fees & Subjects">
+  <section class="bg-gradient-to-r from-blue-800 to-indigo-900 text-white py-12 px-4 text-center">
+    <h1 class="text-3xl md:text-4xl font-bold">Junior Wing Curriculum</h1>
+    <p class="text-blue-200 mt-2">Comprehensive school board prep for Classes 5th to 10th (MP Board & CBSE)</p>
+  </section>
+
+  <section class="max-w-4xl mx-auto py-16 px-4">
+    <div class="bg-white rounded-xl shadow-md border border-slate-200 overflow-hidden mb-12">
+      <div class="p-6 bg-slate-50 border-b border-slate-200">
+        <h2 class="text-2xl font-bold text-slate-800">Annual Course Fee Structure</h2>
+        <p class="text-slate-600 text-sm mt-1">Registration Fees: <span class="font-semibold text-amber-600">₹500/-</span> (Applicable to all classes)</p>
+      </div>
+      <div class="overflow-x-auto">
+        <table class="w-full text-left border-collapse">
+          <thead>
+            <tr class="bg-slate-100 text-slate-700 uppercase text-xs font-bold tracking-wider border-b border-slate-200">
+              <th class="p-4">Class / Batch</th>
+              <th class="p-4">MP Board (Annual)</th>
+              <th class="p-4">CBSE Board (Annual)</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200 text-slate-700">
+            {classesData.map((c) => (
+              <tr class="hover:bg-slate-50 transition-colors">
+                <td class="p-4 font-semibold text-slate-900">{c.grade}</td>
+                <td class="p-4 text-emerald-700 font-medium">₹{c.mpFee}</td>
+                <td class="p-4 text-blue-700 font-medium">₹{c.cbseFee}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="bg-slate-100 rounded-xl p-8 border border-slate-200">
+      <h3 class="text-xl font-bold text-slate-800 mb-6 text-center">All Subjects Covered</h3>
+      <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+        {subjects.map((subject) => (
+          <div class="bg-white px-4 py-3 rounded-lg border border-slate-200 text-center font-medium text-slate-700 shadow-sm">
+            📚 {subject}
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

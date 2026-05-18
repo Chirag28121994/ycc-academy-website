@@ -1,0 +1,105 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const highlights = [
+  { title: "Experienced Faculty", desc: "Learn from top subject matter expert teachers dedicated to school board excellence." },
+  { title: "Digital Classes", desc: "Interactive television visual concepts inside modern air-conditioned classrooms." },
+  { title: "Weekly & Monthly Tests", desc: "Consistent track monitoring to ensure students are completely exam ready." },
+  { title: "Dedicated Revision Sessions", desc: "Comprehensive revisions of critical topics before final terminal board exams." }
+];
+
+const faqs = [
+  { q: "Where is YCC Academy located?", a: "We are situated right opposite the Sabzi Mandi at Karnal ki Bagiya, Pinto Park, Gwalior." },
+  { q: "Does the academy provide support for both CBSE and MP Board?", a: "Yes, we run separate batches tailored specifically to the syllabus constraints of both boards." },
+  { q: "Can we sign up for free demo classes?", a: "Absolutely! Every student is invited to attend free demo classes to experience our teaching approach first-hand." }
+];
+---
+
+<BaseLayout title="Best Coaching Classes for 5th-12th in Pinto Park">
+  <section class="relative bg-gradient-to-br from-blue-900 to-indigo-950 text-white py-20 px-4">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <span class="bg-amber-500 text-slate-900 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Admission Open 2026-27</span>
+        <h1 class="text-4xl md:text-5xl font-bold mt-4 leading-tight">YCC Academy <br/><span class="text-amber-400">Yogya Career Classes</span></h1>
+        <p class="text-slate-300 mt-4 text-lg">Empowering young minds from Classes 5th to 12th across CBSE & MP Board tracks with high-quality concept learning in Gwalior.</p>
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a href="https://wa.me/918109257998" class="bg-amber-500 text-slate-900 px-6 py-3 rounded-lg font-bold hover:bg-amber-400 transition-colors">Book Free Demo Class</a>
+          <a href="#register" class="border border-slate-400 text-white px-6 py-3 rounded-lg font-bold hover:bg-white/10 transition-colors">Fill Admission Inquiry</a>
+        </div>
+      </div>
+      <div class="bg-slate-800 h-64 md:h-96 rounded-2xl shadow-xl border border-slate-700 flex items-center justify-center overflow-hidden">
+        <span class="text-slate-500 text-sm p-4 text-center">[Place Digital Classroom Image here: assets/hero-classroom.webp]</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 max-w-6xl mx-auto px-4">
+    <h2 class="text-3xl font-bold text-center mb-12">Why Choose YCC Academy?</h2>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      {highlights.map(h => (
+        <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+          <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600 font-bold text-xl mb-4">✓</div>
+          <h3 class="font-bold text-lg text-slate-800">{h.title}</h3>
+          <p class="text-slate-600 text-sm mt-2 leading-relaxed">{h.desc}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="bg-slate-100 py-12 px-4 border-y border-slate-200">
+    <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+      <div>
+        <h3 class="text-xl font-bold text-slate-800">Want the full offline course fee chart?</h3>
+        <p class="text-slate-600 text-sm mt-1">Download the digital version of our printed flyer pamphlet to save on your phone.</p>
+      </div>
+      <a href="/assets/ycc-academy-brochure.pdf" download class="bg-blue-700 hover:bg-blue-800 text-white font-bold px-6 py-3 rounded-lg flex items-center gap-2 whitespace-nowrap transition-colors">
+        📥 Download Digital Pamphlet
+      </a>
+    </div>
+  </section>
+
+  <section id="register" class="py-16 max-w-3xl mx-auto px-4 text-center">
+    <h2 class="text-3xl font-bold mb-4">Student Admission Inquiry</h2>
+    <p class="text-slate-600 mb-8">Can't visit the center in person right away? Fill out this quick inquiry form, and Atul Sir or Vikash Sir will get back to you within 24 hours.</p>
+
+    <div class="bg-white p-4 rounded-xl shadow-md border border-slate-200">
+      <iframe
+        src="https://docs.google.com/forms/d/e/1FAIpQLSccVf3X9U_placeholder/viewform?embedded=true"
+        width="100%"
+        height="600"
+        frameborder="0"
+        marginheight="0"
+        marginwidth="0"
+        class="rounded-lg"
+      >Loading Google Form...</iframe>
+    </div>
+  </section>
+
+  <section class="bg-blue-50 py-16 px-4">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-12">What Parents & Students Say</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-white p-6 rounded-xl shadow-sm italic text-slate-700">
+          "The separate batch structure for CBSE students helped me focus cleanly on my board patterns. Atul Sir makes complex math topics incredibly easy to digest."
+          <div class="mt-4 font-bold text-slate-900 not-italic text-sm">— 10th Class CBSE Student Batch</div>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-sm italic text-slate-700">
+          "Very clean discipline and focus near Pinto Park area. Monthly mock test sheets kept my daughter completely on track with her MP Board revisions."
+          <div class="mt-4 font-bold text-slate-900 not-italic text-sm">— Satisfied Parent, Gwalior</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 max-w-4xl mx-auto px-4">
+    <h2 class="text-3xl font-bold text-center mb-12">Frequently Asked Questions</h2>
+    <div class="space-y-4">
+      {faqs.map(faq => (
+        <div class="bg-white p-6 rounded-lg border border-slate-200">
+          <h4 class="font-bold text-lg text-slate-900 mb-2">❓ {faq.q}</h4>
+          <p class="text-slate-600 text-sm leading-relaxed pl-6">{faq.a}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+</BaseLayout>
