@@ -23,7 +23,7 @@ import { SITE, CONTACT } from '../config';
       <ul class="space-y-3 text-sm">
         <li class="flex items-start gap-2">
           <span class="text-amber-400 font-bold">📍</span>
-          <span>{SITE.address}</span>
+          <a href={SITE.googleMapsShareUrl} target="_blank" rel="noopener noreferrer" class="hover:text-amber-400 transition-colors">{SITE.address}</a>
         </li>
         <li class="flex items-center gap-2">
           <span class="text-amber-400 font-bold">📞</span>
